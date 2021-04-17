@@ -26,7 +26,11 @@ onready var pcap = $CollisionShape
 onready var bonker = $HeadBonk
 onready var aimcast = $Head/Camera/Aimcast
 onready var muzzle = $Head/Gun/Muzzle
+<<<<<<< HEAD
+#onready var bullet = preload("res://scenes/Bullet.tscn")
+=======
 onready var bullet = preload("res://scenes/Bullet.tscn")
+>>>>>>> 28f47a7e53dd499704c82c1769c208e0dad8c5cd
 
 
 func _ready():
@@ -46,6 +50,19 @@ func _physics_process(delta):
 	direction = Vector3()
 	
 	if Input.is_action_just_pressed("fire"):
+<<<<<<< HEAD
+		print("fire fire")
+		if aimcast.is_colliding():
+			var bullet = get_world().direct_space_state
+			var collision = bullet.intersect_ray(muzzle.transform.origin, aimcast.get_collision_point())
+			
+			if collision:
+				var target = collision.collider
+				print(target)
+				if target.is_in_group("Enemy"):
+					print("hit enemy")
+					target.health -= damage
+=======
 		if aimcast.is_colliding():
 			print("fire")
 			var b = bullet.instance()
@@ -53,6 +70,7 @@ func _physics_process(delta):
 			b.look_at(aimcast.get_collision_point(), Vector3.UP)
 			print(b.rotation)
 			b.shoot = true
+>>>>>>> 28f47a7e53dd499704c82c1769c208e0dad8c5cd
 	
 	
 	if bonker.is_colliding():

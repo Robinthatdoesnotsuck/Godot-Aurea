@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scripts/Controller.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://crosshair.png" type="Texture" id=2]
-=======
-[gd_scene load_steps=5 format=2]
-
-[ext_resource path="res://scripts/Controller.gd" type="Script" id=1]
->>>>>>> 28f47a7e53dd499704c82c1769c208e0dad8c5cd
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -32,14 +26,13 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04932, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.809625, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 
-[node name="Aimcast" type="RayCast" parent="Head/Camera"]
+[node name="AimCast" type="RayCast" parent="Head/Camera"]
 enabled = true
-<<<<<<< HEAD
-cast_to = Vector3( 0, -1, -10000 )
+cast_to = Vector3( 0, 0, -10000 )
 
 [node name="TextureRect" type="TextureRect" parent="Head/Camera"]
 margin_left = 492.0
@@ -50,23 +43,15 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-=======
-cast_to = Vector3( 0, -1, -1000 )
->>>>>>> 28f47a7e53dd499704c82c1769c208e0dad8c5cd
 
 [node name="Gun" type="MeshInstance" parent="Head"]
-transform = Transform( 0.116096, 0, 0, 0, 0.132493, 0, 0, 0, 0.472438, 0.515, -0.51832, -0.667 )
+transform = Transform( 0.122, 0, 0, 0, 0.111, 0, 0, 0, 0.263, 0.322, -0.316, -0.689 )
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Muzzle" type="Spatial" parent="Head/Gun"]
-<<<<<<< HEAD
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.08224 )
-=======
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.24885 )
->>>>>>> 28f47a7e53dd499704c82c1769c208e0dad8c5cd
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.20003 )
 
 [node name="HeadBonk" type="RayCast" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05528, 0 )
-enabled = true
-cast_to = Vector3( 0, 0.3, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885139, 0 )
+cast_to = Vector3( 0, 0.5, 0 )
